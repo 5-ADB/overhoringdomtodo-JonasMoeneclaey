@@ -2,16 +2,15 @@ const form = document.getElementById("todo-form");
 const input = document.getElementById("todo-input");
 const list = document.getElementById("todo-list");
 const winkelsDiv = document.createElement("div")
-const winkels = ["colruyt", "aldi", "lidl", "delhaize"]
+const winkels = ["geen winkel","colruyt", "aldi", "lidl", "delhaize"]
 const voorafIngesteldeTaken = ["appels (colruyt)", "yogurt (aldi)", "oplaadkabel (aldi)","fruitsap (delhaize)"]
 const winkelSelect = document.createElement("select")
-list.appendChild(winkelsDiv)
-winkelsDiv.className = "winkelsDiv"
-winkelsDiv.appendChild(winkelSelect)
+form.appendChild(winkelSelect)
+
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  const text = input.value.trim();
+  const text = input.value.trim()
   if (text !== "") {
     const li = document.createElement("li");
     li.textContent = text;
